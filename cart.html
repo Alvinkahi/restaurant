@@ -1,0 +1,339 @@
+<!-- Replace your existing HTML with this updated version -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cart - Aaran Bistro Cafe</title>
+  <link rel="stylesheet" href="dishes.css" />
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCx1-NrSMmnBzL3Gj8ZE0qjcLPcwRC_Izk" async defer></script>
+
+  <style>
+    #cart {
+      margin: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    #totalAmount {
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    input[type="text"], input[type="email"] {
+      width: calc(50% - 10px);
+      padding: 10px;
+      margin: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      padding: 10px 15px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #locationMessage {
+      color: red;
+    }
+    #checkoutForm {
+        display: flex;
+        flex-direction: column;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    #checkoutForm input {
+        margin: 5px 0;
+        padding: 10px;
+        font-size: 16px;
+    }
+    
+    #checkoutForm button {
+        margin-top: 10px;
+    }
+    
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#" class="logo"><i class="fa fa-utensils"></i>Aaran Bistro Cafe</a>
+    <nav class="navbar">
+      <a href="main.html">Home</a>
+      <a href="dishes.html">Menu</a>
+      <a href="cart.html"><span class="fas fa-shopping-cart"></span> (<span id="cartCount">0</span>)</a>
+    </nav>
+  </header>
+
+  <section id="cart">
+    <h2>Your Cart</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="cartItems"></tbody>
+    </table>
+    <div id="totalAmount">Total: 0 Ksh</div>
+    <div id="checkoutForm" style="margin-top: 20px;">
+        <h3>Customer Details</h3>
+        <input type="text" id="customerName" placeholder="Full Name" required>
+        <input type="email" id="customerEmail" placeholder="Email Address" required>
+        <input type="text" id="phoneNumber" placeholder="Phone Number" required>
+        
+        <label for="locationInput">Delivery Location:</label>
+        <input type="text" id="locationInput" placeholder="e.g., Westlands" required>
+        <div id="locationMessage" style="color: red;"></div>
+    
+        <button id="payButton" onclick="startCheckout()">Pay with Paystack</button>
+    </div>
+    
+
+
+
+
+  </section>
+
+  <script>
+    let geocoder;
+
+    function initMap() {
+      geocoder = new google.maps.Geocoder();
+      getUserLocation();
+    }
+
+    function loadCart() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const cartItemsDiv = document.getElementById('cartItems');
+      let total = 0;
+
+      cartItemsDiv.innerHTML = '';
+      cart.forEach(item => {
+        total += item.price * item.quantity;
+        cartItemsDiv.innerHTML += `
+          <tr>
+            <td>${item.name}</td>
+            <td>${item.price} Ksh</td>
+            <td>${item.quantity}</td>
+            <td>
+              <button onclick="removeFromCart('${item.name}')">-</button>
+              <button onclick="addToCart('${item.name}', ${item.price})">+</button>
+            </td>
+          </tr>
+        `;
+      });
+
+      document.getElementById('totalAmount').innerText = `Total: ${total} Ksh`;
+      document.getElementById('cartCount').innerText = cart.length;
+    }
+
+    function removeFromCart(itemName) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const itemIndex = cart.findIndex(i => i.name === itemName);
+      if (itemIndex > -1) {
+        cart[itemIndex].quantity--;
+        if (cart[itemIndex].quantity === 0) {
+          cart.splice(itemIndex, 1);
+        }
+      }
+      localStorage.setItem('cart', JSON.stringify(cart));
+      loadCart();
+    }
+
+    function isLocationInNairobi(lat, lng) {
+      return lat <= -1.157 && lat >= -1.500 && lng <= 36.933 && lng >= 36.700;
+    }
+
+    function getUserLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          position => {
+            const lat = position.coords.latitude;
+            const lng = position.coords.longitude;
+            if (isLocationInNairobi(lat, lng)) {
+              document.getElementById('locationMessage').innerText = "Location accepted!";
+            } else {
+              document.getElementById('locationMessage').innerText = "Service not available in your area.";
+            }
+          },
+          error => {
+            console.log("Geolocation error:", error);
+          }
+        );
+      }
+    }
+
+    function startPayment() {
+      const name = document.getElementById('customerName').value;
+      const email = document.getElementById('customerEmail').value;
+      const phone = document.getElementById('phoneNumber').value;
+      const locationName = document.getElementById('locationInput').value;
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      geocoder.geocode({ 'address': locationName }, (results, status) => {
+        if (status === 'OK' && results[0]) {
+          const location = results[0].geometry.location;
+          if (!isLocationInNairobi(location.lat(), location.lng())) {
+            document.getElementById('locationMessage').innerText = "Please enter a location within Nairobi.";
+            return;
+          }
+
+          const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0) * 100;
+
+          const handler = PaystackPop.setup({
+            key: 'pk_test_47ff939949f60169d1da224be4a07ee674677d2b', // Replace with your Paystack public key
+            email: email,
+            amount: total,
+            currency: 'KES',
+            ref: '' + Math.floor(Math.random() * 1000000000 + 1),
+            metadata: {
+              custom_fields: [
+                { display_name: "Phone Number", variable_name: "phone_number", value: phone },
+                { display_name: "Delivery Location", variable_name: "location", value: locationName }
+              ]
+            },
+            callback: function (response) {
+              sendConfirmationEmail(name, email, phone, cart, total / 100, locationName);
+              alert("Payment complete! Thank you.");
+              localStorage.removeItem('cart');
+              window.location.reload();
+            },
+            onClose: function () {
+              alert('Transaction was not completed.');
+            }
+          });
+          handler.openIframe();
+        } else {
+          document.getElementById('locationMessage').innerText = "Invalid location.";
+        }
+      });
+    }
+
+    function sendConfirmationEmail(name, email, phone, cart, total, location) {
+      emailjs.init("qlcEe7sXgMLARvh_U"); // Replace with your EmailJS user ID
+
+      const itemDetails = cart.map(i => `${i.name} x${i.quantity} = ${i.price * i.quantity} Ksh`).join("<br>");
+
+      const templateParams = {
+        to_email: email,
+        customer_name: name,
+        phone_number: phone,
+        location,
+        order_details: itemDetails,
+        total_amount: total,
+        store_email: "kahisammy254@gmail.com" // change to your real email
+      };
+
+      emailjs.send("service_sovafal", "template_ncvmh48", templateParams)
+        .then(function () {
+          console.log('Email sent successfully');
+        }, function (error) {
+          console.log('Email failed:', error);
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      loadCart();
+      initMap();
+    });
+    function payWithPaystack(name, email, phone, amount, location, cartItems) {
+        let handler = PaystackPop.setup({
+            key: 'pk_test_47ff939949f60169d1da224be4a07ee674677d2b', // replace with your Paystack public key
+            email: email,
+            amount: amount * 100, // in kobo (1 KES = 100 kobo)
+            currency: 'KES',
+            ref: '' + Math.floor(Math.random() * 1000000000 + 1),
+    
+            callback: function(response) {
+                alert("Payment successful! Ref: " + response.reference);
+                // Send email after successful payment
+                sendConfirmationEmail(name, email, phone, location, cartItems, amount);
+    
+                // Clear cart and redirect
+                localStorage.removeItem('cart');
+                window.location.href = 'thankyou.html';
+            },
+            onClose: function() {
+                // Redirect to cancel page
+                window.location.href = "cancel.html";
+            }
+    
+
+        });
+    
+        handler.openIframe();
+    }
+    function startCheckout() {
+        const name = document.getElementById('customerName').value.trim();
+        const email = document.getElementById('customerEmail').value.trim();
+        const phone = document.getElementById('phoneNumber').value.trim();
+        const location = document.getElementById('locationInput').value.trim();
+    
+        if (!name || !email || !phone || !location) {
+            alert("Please fill in all fields.");
+            return;
+        }
+    
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        if (cart.length === 0) {
+            alert("Your cart is empty.");
+            return;
+        }
+    
+        const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    
+        geocoder.geocode({ address: location }, (results, status) => {
+            if (status === 'OK' && results[0]) {
+                const loc = results[0].geometry.location;
+                const lat = loc.lat();
+                const lng = loc.lng();
+    
+                if (isLocationInNairobi(lat, lng)) {
+                    payWithPaystack(name, email, phone, total, location, cart);
+                } else {
+                    document.getElementById('locationMessage').innerText = "Sorry, we only deliver within Nairobi.";
+                }
+            } else {
+                document.getElementById('locationMessage').innerText = "Location not found. Try being more specific.";
+            }
+        });
+    }
+    
+  </script>
+</body>
+</html>

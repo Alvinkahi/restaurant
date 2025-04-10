@@ -1,0 +1,1696 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aaran Bistro Cafe</title>
+    <link rel="icon" href=".ig1.jpg" type="image/icon type">
+<link rel="stylesheet" href="dishes.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <!--Header section start-->
+    <header>
+        <a href="#" class="logo"><i class="fa fa-utensils"></i>Aaran Bistro Cafe</a>
+        <nav class="navbar">
+            <a  href="main.html">Home</a>
+            <a  href="dishes.html">Menu</a>
+            <a  href="#" onclick="openAbout()">about</a>
+             <a href="cart.html">
+                <span class="fas fa-shopping-cart"></span> (<span id="cartCount">0</span>)
+            </a>
+        </nav>
+  
+    </header>
+
+<!--Rating Form starts-->
+
+<div class="back">
+    <div class="container1" id="co1">
+        <div class="post">
+            <div class="text">Thanks for Rating us!</div>
+            <div class="edit">Edit</div>
+            <i class="fas fa-times" id="close"></i>
+    
+        </div>
+        <div class="star-widget">
+        <input type="radio" name="rate" id="rate-5">
+        <label for="rate-5" class="fas fa-star"></label>
+        <input type="radio" name="rate" id="rate-4">
+        <label for="rate-4" class="fas fa-star"></label>
+        <input type="radio" name="rate" id="rate-3">
+        <label for="rate-3" class="fas fa-star"></label>
+        <input type="radio" name="rate" id="rate-2">
+        <label for="rate-2" class="fas fa-star"></label>
+        <input type="radio" name="rate" id="rate-1">
+        <label for="rate-1" class="fas fa-star"></label>
+        <form action="#">
+            <i class="fas fa-times" id="close"></i>
+            <h4></h4>
+            <div class="textarea">
+                <textarea cols="30" placeholder="Describe your experience"></textarea>
+    
+            </div>
+            
+            <div class="btn">
+                <button type="submit">Post</button>
+            </div>
+        </form>
+        </div>    
+    </div>
+    </div>
+<!--Rating form ends-->
+<!--side bar-->
+
+<nav class="sidebar">
+    <div class="text">
+    <a href="dishes.html"><i class="fa fa-home"></i></a>
+    <ul>
+        <li><a href="#biryani" onclick="myfun()">Drinks</a></li>
+        <li><a href="#start" onclick="myfunction()">Breakfast</a></li>
+        <li><a href="#roti" onclick="myroti()">Kids Menu</a></li>
+        <li><a href="#curry" onclick="mycurry()">Lunch & Dinner</a></li>
+        <li><a href="#fast" onclick="myfastfood()">Desert</a></li>
+    </ul>
+</div>
+</nav>
+<!--Side bar ends-->
+<section class="home" id="home">
+    <div class="barb">
+    <div class="cont">
+        <video width="630" height="400" autoplay muted playsinline loop>
+            <source src="video.mp4" type="video/mp4">
+          </video>
+        </div>
+        </div>
+</section>
+<section class="fastfood" id="fast">
+    <h2 class="fastfood1">Dessert</h2>
+    <hr class="line">
+    <div class="box-fast-food">
+        <div class="box">
+            <img src="61.png">
+            <h3>White Forest Cake</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>590ksh</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('White Forest Cake', 590)">Add to cart</a>
+            
+        </div>
+        <div class="box">
+            <img src="62.png">
+            <h3>Masoob (Macsuub)</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>700ksh</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Masoob (Amcsuub)', 700)">Add to cart</a>
+            
+        </div>
+        <div class="box">
+            <img src="64.png">
+            <h3>Affagt0 (Gelato + Expresso)</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>490ksh</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Affagt0 (Gelato + Expresso)', 490)">Add to cart</a>
+            
+        </div>
+        <div class="box">
+            <img src="65.png">
+            <h3>Strawberry/Banana Nutella Crepe</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>690ksh</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Strawberry/Banana Nutella Crepe', 690)">Add to cart</a>
+            
+        </div>
+        <div class="box">
+            <img src="66.png">
+            <h3>Chocolate Cake</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>490ksh</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Chocolate Cake', 490)">Add to cart</a>
+            
+        </div>
+        <div class="box">
+            <img src="67.png">
+            <h3>Biscoff Tiramisu</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>590ksh</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Biscoff Tiramisu', 590)">Add to cart</a>
+            
+        </div>
+    </div>
+</section>
+
+<!--Curry menu-->
+<section class="currys" id="curry">
+    <h2 class="mehfil">Lunch & Dinner</h2>
+    <hr class="line">
+    <div class="box-curry">
+        <div class="box">
+            <img src="59.png">
+            <h3>Beef/Chicken Samosa</h3>
+            <h3>(3)350ksh</h3>
+            <h3>(6)690ksh</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>Delightful mix of  seasoned beef or chicken, onions and cilantro, fried to perfextion</span>
+         
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Beef/Chicken Samosa(3)', 350)">Add to cart(3)</a>
+            <a href="#" class="btn" onclick="addToCart('Beef/Chicken Samosa(6)', 690)">Add to cart(6)</a>
+        </div>
+        <div class="box">
+            <img src="81.png">
+            <h3>Soup of the Day</h3>
+            <h3>400ksh</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>Special soup offered by the chef daily.</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Soup of the Day', 400)">Add to cart</a>
+        </div>
+        <div class="box">
+            <img src="80.png">
+            <h3>Chicken Wings and Fries</h3>
+            <h3>(6)700ksh</h3>
+            <h3>(10)1190ksh</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>Flavor: Hot Honey-Barbecue-Garlic Parmean</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Beef/Chicken Samosa(6)', 600)">Add to cart(6)</a>
+            <a href="#" class="btn" onclick="addToCart('Beef/Chicken Samosa(10)', 1190)">Add to cart(10)</a>
+        </div>
+        <div class="box">
+            <img src="82.png">
+            <h3>Fay's Sampler(Sharable)</h3>
+            <h3>1290ksh</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>A perfect combination of our samosas, avacado egg rolls and chicken wings.</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Fays Sampler(Sharable)', 1290)">Add to cart</a>
+        </div>
+        <div class="box">
+            <img src="58.png">
+            <h3>Avacado Egg Rolls</h3>
+            <h3>(2) 300ksh</h3>
+            <h3>(4)600ksh</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>Crispy on the outside with an avacado and carrot mixture inside that is bursting with flavour.</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Avacado Egg Rolls(2)', 490)">Add to cart(2)</a>
+            <a href="#" class="btn" onclick="addToCart('Avacado Egg Rolls(4)', 490)">Add to cart(4)</a>
+        </div>
+        
+        <div class="box">
+            <img src="57.png">
+            <h3>masala Fries</h3>
+            <h3>350ksh</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>Crisp fries tossed with flavoured garic, onions and tomato masala sauce.</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('masala Fries', 350)">Add to cart</a>
+        </div>
+    
+        <div class="box">
+            <img src="56.png">
+            <h3>Ugali Vegetable & Meat</h3>
+            <h3>700ksh</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>Fall-off-the-bone slow-cooked meat served with ugali and vegetables</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Ugali Vegetable & Meat', 700)">Add to cart</a>
+        </div>
+        <div class="box">
+            <img src="60.png">
+            <h3>Teriyaki Salmon</h3>
+            <h3>2500ksh</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>Salmon seared and baked with our house made teriyaki saauce and erved over brocoli, mashed potatoes or mandhi rice</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Teriyaki Salmon', 2500)">Add to cart</a>
+        </div>
+        <div class="box">
+            <img src="54.png">
+            <h3>Blackened Snapper</h3>
+            <h3>1590ksh</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>Cajun seasoned Red Snaper served over mashed potatoes or mandhi rice</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Blackened Snapper', 1590)">Add to cart</a>
+        </div>
+        <div class="box">
+            <img src="53.png">
+            <h3>Spagetti Bolognese</h3>
+            <h3>1490ksh</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>Our classic italian dish where al dente pasta meets a hearty ground beef sauce slow-cooked with onions, garlic and tomatoes</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Spagetti Bolognese', 1490)">Add to cart</a>
+        </div>
+        <div class="box">
+            <img src="51.png">
+            <h3>Rasta Pasta</h3>
+            <h3>1490ksh</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>Italian meets jamaican with  our parmesan crusted chicken and creamy cajun sauce over farfalle pasta.</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Rasta Pasta', 1490)">Add to cart</a>
+        </div>
+        <div class="box">
+            <img src="49.png">
+            <h3>Pomadoro Pasta(Saldato)</h3>
+            <h3>1290ksh</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>Our simple yet delicious pasta made with a delicious house made tomato sauce,fresh basil and parmesan cheese.</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Pomadoro Pasta(Saldato)', 1290)">Add to cart</a>
+        </div>
+        <div class="box">
+            <img src="48.png">
+            <h3>New York Strip Steak</h3>
+            <h3>1590ksh</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>Grilled sirloin steak using house seasoning served with garlic mashed potatoes and sauteed vegetables.</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('New York Strip Steak', 1590)">Add to cart</a>
+        </div>
+        <div class="box">
+            <img src="47.png">
+            <h3>Fried Somali Goat(AROSTO)</h3>
+            <h3>1490ksh</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>Fall-off-bone spice mrinated and fried goat meat served with mandhi rice and salad.</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('BFried Somali Goat(AROSTO)', 1490)">Add to cart</a>
+        </div>
+        <div class="box">
+            <img src="46.png">
+            <h3>Boiled  Somalia Goat (ALESO)</h3>
+            <h3>1390ksh</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>Fall-off-bone spice slow-cooked goat meat served with mandi rice and salad.</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Boiled  Somalia Goat (ALESO)', 1390)">Add to cart</a>
+        </div>
+        <div class="box">
+            <img src="45.png">
+            <h3>Chicken Butter Masala</h3>
+            <h3>1390ksh</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>Chicken gently simmered in a sauce made of tomatoes, bell peppers
+                onions, cream, yoghurt, ginger, garlic, nutmeg, cardamom and butter.
+                Served with biryani rice and chapati.</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Chicken Butter Masala', 1390)">Add to cart</a>
+        </div>
+
+        <div class="box">
+            <img src="44.png">
+            <h3>Honey Chipotle Chicken</h3>
+            <h3>1390ksh</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>Tender, juicy, sweet and spicy! Made with our house made honey
+                chipotle sauce and served with seasoned fries or biryani rice.</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Honey Chipotle Chicken', 1390)">Add to cart</a>
+        </div>
+        <div class="box">
+            <img src="43.png">
+            <h3>Chicken Avacado Salad</h3>
+            <h3>1190ksh</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>Grilled marinated chicken, mixed greens, tomato, avocado, hardened
+                egg and drizzled with our house made lemon vinaigrette sauce</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Chicken Avacado Salad', 1190)">Add to cart</a>
+        </div>
+        <div class="box">
+            <img src="42.png">
+            <h3>Classic Caesar Salad</h3>
+            <h3>990ksh</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>Grilled marinated chicken, romaine lettuce, croutons, house
+                caesar dressing, and parmesan cheese</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Classic Caesar Salad', 990)">Add to cart</a>
+        </div>
+        <div class="box">
+            <img src="41.png">
+            <h3>Chicken Mandhi Family Platter</h3>
+            <h3>4400ksh (served 4 pax)</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>Aromatic, soft tender chunks of chicken & layered with rice infused
+                with the flavors of spices. Served with salad, boiled eggs, garlic sauce
+                and house made green chili sauce.</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Chicken Mandhi Family Platter', 4400)">Add to cart</a>
+        </div>
+        <div class="box">
+            <img src="40.png">
+            <h3>Goated Fried Mandhi Family Platter</h3>
+            <h3>4900ksh (served 4 pax)</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>Tender slow cooked chunks of goat, stir fried & layered with
+                rice infused with the flavors of spices. Served with salad, boiled
+                eggs, garlic sauce and house made green chili sauce.</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Goated Fried Mandhi Family Platter', 4900)">Add to cart</a>
+        </div>
+        <div class="box">
+            <img src="39.png">
+            <h3>Xaniid(Lamp Shank)</h3>
+            <h3>1590ksh</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>Lamb shank braised with broth, and vegetables over
+                Seasoned Fries mashed potatoes or mandhi rice.</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Xaniid(Lamp Shank)', 1590)">Add to cart</a>
+        </div>
+        <div class="box">
+            <img src="76.png">
+            <h3>Fay's Classic Smash Burger</h3>
+            <h3>1190ksh</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>Double smash patties, mozzarella
+                cheese, lettuce, tomatoes, red onions,
+                ketchup, toasted Ciabatta bun,
+                served with seasoned fries.</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Fays Classic Smash Burger', 1190)">Add to cart</a>
+        </div>
+        <div class="box">
+            <img src="74.png">
+            <h3>Classic Chicken Burger</h3>
+            <h3>1190ksh</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>Crispy seasoned chicken breast, topped with
+                mandatory melted cheese, piled onto soft rolls
+                with onion, lettuce, tomato, pickle, and mayo,
+                served with seasoned fries.</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Classic Chicken Burger', 1190)">Add to cart</a>
+        </div>
+        <div class="box">
+            <img src="73.png">
+            <h3>Cheesesteak Sandwich</h3>
+            <h3>1190ksh</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>Tender beef, peppers, onions and melted
+                cheese loaded on toasted hoagie, served with
+                seasoned fries.</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Cheesesteak Sandwich', 1190)">Add to cart</a>
+        </div>
+        <div class="box">
+            <img src="72.png">
+            <h3>Grilled Pesto Chicken Panini</h3>
+            <h3>990ksh</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>Grilled chicken, pesto, and cheese, all of which
+                are layered in between white bread and grilled
+                until crispy, served with seasoned fries.</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Grilled Pesto Chicken Panini', 990)">Add to cart</a>
+        </div>
+        <div class="box">
+            <img src="71.png">
+            <h3>Chicken Avacado Wrap</h3>
+            <h3>990ksh</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>Grilled chicken, avocado, romaine lettuce,
+                house made cilantro lime sauce, and melted
+                mozzarella cheese wrapped on out house made
+                tortillas, served with seasoned fries.</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Chicken Avacado Wrap', 990)">Add to cart</a>
+        </div>
+        <div class="box">
+            <img src="70.png">
+            <h3>Chicken Shawarmma</h3>
+            <h3>490ksh</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>Grilled chicken, avocado, romaine lettuce,
+                house made cilantro lime sauce, and melted
+                mozzarella cheese wrapped on out house made
+                tortillas, served with seasoned fries.</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Chicken Shawarmma', 490)">Add to cart</a>
+        </div>
+        <div class="box">
+            <img src="69.png">
+            <h3>Steak Quesadilla</h3>
+            <h3>1190ksh</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>Marinated steak, onions, and peppers in
+                a flour tortilla with melted cheddar
+                cheese. served with seasoned fries and
+                guacamole.</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Steak Quesadilla', 1190)">Add to cart</a>
+        </div>
+        <div class="box">
+            <img src="68.png">
+            <h3>BBQ Chicken Quesadilla</h3>
+            <h3>1190ksh</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>Marinated grilled chicken in a flour tortilla
+                with melted mozzerella cheese. served with
+                barbeque sauce, seasoned fries, and
+                guacamole.</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('BBQ Chicken Quesadilla', 1190)">Add to cart</a>
+        </div>
+</section>
+<section class="rotis" id="roti">
+    <h2 class="mehfil">Kids' Menu</h2>
+    <hr class="line">
+    <div class="box-roti">
+        <div class="box">
+            <img src="79.png">
+            <h3>Chicken Tender (3) and Fries</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>500ksh</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Chicken Tender (3) and Fries', 500)">Add to cart</a>
+        </div>
+        <div class="box">
+                <img src="78.png">
+                <h3>Cheeseburger Slides (2) and Fries</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+        
+                </div>
+                <span>600ksh</span>
+                <br>
+                <a href="#" class="btn" onclick="addToCart('Cheeseburger Slides (2) and Fries', 600)">Add to cart</a>
+            </div>
+        <div class="box">
+            <img src="77.png">
+            <h3>Kiddy Hotdog and Fries</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>500ksh</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Kiddy Hotdog and Fries', 500)">Add to cart</a>
+        </div>
+        <div class="box">
+            <img src="75.png">
+            <h3>Fish Finger (4) and Fries</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>600ksh</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Fish Finger (4) and Fries', 600)">Add to cart</a>
+        </div>
+</section>
+
+<section class="starters" id="start">
+    <h2 class="mehfil">BREAKFAST & BRUNCH</h2>
+    <hr class="line">
+    <h4>All breakfast items come with a choice of tea or coffe</h4> 
+    <div class="box-starters">
+        <div class="box">
+            <img src="93.png">
+            <h3>Fay's Big Breakfast</h3>
+            <h3>1090ksh</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>Scrambled eggs, beef sausage (2x),
+                pancakes (2x) served with house
+                potatoes.</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Fays Big Breakfast', 1090)">Add to cart</a>
+        </div>
+        <div class="box">
+            <img src="92.png">
+            <h3>Chicken Omelette</h3>
+            <h3>890ksh</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>Marinated chicken, grilled, sliced, then
+                sautéed with bell peppers and onions,
+                folded into a 3-egg omelette with cheese
+                and served with house potatoes.</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Chicken Omelette', 890)">Add to cart</a>
+        </div>
+        <div class="box">
+            <img src="89.png">
+            <h3>Cloud Nine Pancake</h3>
+            <h3>890ksh</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>Three pancakes served with warm
+                maple syrup and bananas.</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Cloud Nine Pancake', 890)">Add to cart</a>
+        </div>
+        <div class="box">
+            <img src="88.png">
+            <h3>Steak Omelette</h3>
+            <h3>890ksh</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>Grilled beef skirt steak, sautéed with bell
+                peppers and onions, folded into a
+                3-egg omelette with cheese and served
+                with house potatoes.</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Steak Omelette', 890)">Add to cart</a>
+        </div>
+        <div class="box">
+            <img src="86.png">
+            <h3>Belgian Waffle</h3>
+            <h3>890ksh</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>Fresh blueberries and strawberries
+                heaped on a warm Belgian waffle,
+                and dusted with powdered sugar.</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Belgian Waffle', 890)">Add to cart</a>
+        </div>
+        <div class="box">
+            <img src="87.png">
+            <h3>Mushroom & Spinach Omelette</h3>
+            <h3>890ksh</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>A blend of spinach, tomatoes, onions, and bell
+                peppers, folded into a 3-egg omelette with
+                cheese and served with house potatoes.</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Mushroom & Spinach Omelette', 890)">Add to cart</a>
+        </div>
+        <div class="box">
+            <img src="85.png">
+            <h3>Camel Stew (Sugar)</h3>
+            <h3>1090ksh</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>Delicious camel meat that weaves
+                layers of flavor into each tender
+                bite, served with malawax (crepes). Available all day</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Camel Stew (Sugar)', 1090)">Add to cart</a>
+        </div>
+        <div class="box">
+            <img src="83.png">
+            <h3>Oodkac iyo Timir</h3>
+            <h3>980ksh</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>Somali style camel jerky with dates and
+                spices. Served with malawax (crepes).
+                Available all day</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Oodkac iyo Timir', 980)">Add to cart</a>
+        </div>
+        <div class="box">
+            <img src="84.png">
+            <h3>Chicken and Waffles</h3>
+            <h3>1090ksh</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+    
+            </div>
+            <span>Golden fluffy Belgian waffle topped
+                with our signature wings and strawberries
+                and dusted with powdered sugar.</span>
+            <br>
+            <a href="#" class="btn" onclick="addToCart('Chicken and Waffles', 1090)">Add to cart</a>
+        </div>
+    </div>
+
+</section>
+
+<section class="meh" id="biryani">
+    <h2 class="Mehfil">DRINKS & BEVERAGES</h2>
+    <hr class="line">  
+    <div class="box-container">
+    <div class="box">
+        <img src="2.png">
+        <h3>Cappucino</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+
+        </div>
+        <span>single-250ksh</span>
+        <p><span>Double-300ksh</span></p>
+        <br>
+        <a href="#" class="btn" onclick="addToCart('Cappucino(single)', 250)">Add to cart(single)</a>
+        <a href="#" class="btn" onclick="addToCart('Cappucino(double)', 300)">Add to cart(double)</a>
+    </div>
+    <div class="box">
+        <img src="3.png">
+        <h3>Latte</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+
+        </div>
+        <span>single-250ksh</span>
+        <p><span>Double-300ksh</span></p>
+        <br>
+        <a href="#" class="btn" onclick="addToCart('Latte(single)', 250)">Add to cart(single)</a>
+        <a href="#" class="btn" onclick="addToCart('Latte(double)', 300)">Add to cart(double)</a>
+    </div>
+    <div class="box">
+        <img src="4.png">
+        <h3>Expresso macchiato</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+        <span>single-250ksh</span>
+        <p><span>Double-300ksh</span></p>
+        <br>
+        <a href="#" class="btn" onclick="addToCart('Expresso macchiato(single)', 250)">Add to cart(single)</a>
+        <a href="#" class="btn" onclick="addToCart('Expresso macchiato(double)', 300)">Add to cart(double)</a>
+
+    </div>
+    <div class="box">
+        <img src="5.png">
+        <h3>Americano</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+        <span>single-250ksh</span>
+        <p><span>Double-300ksh</span></p>
+        <br>
+        <a href="#" class="btn" onclick="addToCart('Americano(single)', 250)">Add to cart(single)</a>
+        <a href="#" class="btn" onclick="addToCart('Americano(double)', 300)">Add to cart(double)</a>
+
+    </div>
+    <div class="box">
+        <img src="6.png" >
+        <h3>Expresso</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+        <span>single-250ksh</span>
+        <p><span>Double-300ksh</span></p>
+        <br>
+        <a href="#" class="btn" onclick="addToCart('Expresso(single)', 250)">Add to cart(single)</a>
+        <a href="#" class="btn" onclick="addToCart('Expresso(double)', 300)">Add to cart(double)</a>
+
+    </div>
+    <div class="box">
+        <img src="7.png">
+        <h3>Mint Dawa Tea</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+        <span>270ksh</span>
+        <br>
+        <a href="#" class="btn" onclick="addToCart('Mint Dawa Tea', 270)">Add to cart</a>
+
+    </div>
+    <div class="box">
+        <img src="8.png">
+        <h3>Somali Tea(spiced)</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+        <span>250ksh</span>
+        <br>
+        <a href="#" class="btn" onclick="addToCart('Somali Tea(spiced)', 250)">Add to cart</a>
+
+    </div>
+    <div class="box">
+        <img src="9.png">
+        <h3>Camel Milk Tea</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+        <span>290ksh</span>
+        <br>
+        <a href="#" class="btn" onclick="addToCart('Camel Milk Tea', 290)">Add to cart</a>
+
+    </div>
+    <div class="box">
+        <img src="10.png">
+        <h3>Karak Tea (Dhaka-jabiye)</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+        <span>350ksh</span>
+        <br>
+        <a href="#" class="btn" onclick="addToCart('Karak Tea (Dhaka-jabiye)', 350)">Add to cart</a>
+
+    </div>
+    <div class="box">
+        <img src="11.png">
+        <h3>Somali tea (spiced) Teapot(4 cups)</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+        <span>800ksh</span>
+        <br>
+        <a href="#" class="btn" onclick="addToCart('Somali tea (spiced) Teapot(4 cups)', 800)">Add to cart</a>
+
+    </div>
+    <div class="box">
+        <img src="12.png">
+        <h3>Camel Milk Tea Teapot(4 cups)</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+        <span>900ksh</span>
+        <br>
+        <a href="#" class="btn" onclick="addToCart('Camel Milk Tea Teapot(4 cups)', 900)">Add to cart</a>
+
+    </div>
+    <div class="box">
+        <img src="13.png">
+        <h3>Karak Tea (Dhaka-jabiye) Teapot(4 cups)</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+        <span>990ksh</span>
+        <br>
+        <a href="#" class="btn" onclick="addToCart('Karak Tea (Dhaka-jabiye) Teapot(4 cups)', 990)">Add to cart</a>
+
+    </div>
+
+    <div class="box">
+        <img src="18.png">
+        <h3>Iced Carmel latte</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+        <span>350ksh</span>
+        <br>
+        <a href="#" class="btn" onclick="addToCart('Iced Carmel latte', 350)">Add to cart</a>
+
+    </div>
+    <div class="box">
+        <img src="19.png" >
+        <h3>iced Dalgona Coffee</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+        <span>300ksh</span>
+        <br>
+        <a href="#" class="btn" onclick="addToCart('iced Dalgona Coffee', 300)">Add to cart</a>
+
+    </div>
+    <div class="box">
+        <img src="20.png" >
+        <h3>Caramel Frappe</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+        <span>400ksh</span>
+        <br>
+        <a href="#" class="btn" onclick="addToCart('Caramel Frappe', 400)">Add to cart</a>
+
+    </div>
+    <div class="box">
+        <img src="21.png" >
+        <h3>Iced machiatto</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+        <span>300ksh</span>
+        <br>
+        <a href="#" class="btn" onclick="addToCart('Iced machiatto', 300)">Add to cart</a>
+
+    </div>
+    <div class="box">
+        <img src="22.png" >
+        <h3>Mango Juice(FRESH JUICE)</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+        <span>350ksh</span>
+        <br>
+        <a href="#" class="btn" onclick="addToCart('Mango Juice(FRESH JUICE)', 350)">Add to cart</a>
+
+    </div>
+    <div class="box">
+        <img src="23.png" >
+        <h3>Apple Juice(FRESH JUICE)</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+        <span>350ksh</span>
+        <br>
+        <a href="#" class="btn" onclick="addToCart('Apple Juice(FRESH JUICE)', 350)">Add to cart</a>
+
+    </div>
+    <div class="box">
+        <img src="24.png" >
+        <h3>Orange Juice(FRESH JUICE)</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+        <span>450ksh</span>
+        <br>
+        <a href="#" class="btn" onclick="addToCart('Orange Juice', 450)">Add to cart</a>
+
+    </div>
+    <div class="box">
+        <img src="25.png" >
+        <h3>Classic(HOUSE LEMONADE)</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+        <span>450ksh</span>
+        <br>
+        <a href="#" class="btn" onclick="addToCart('Classic', 450)">Add to cart</a>
+
+    </div>
+    <div class="box">
+        <img src="26.png" >
+        <h3>Strawberry(HOUSE LEMONADE)</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+        <span>450ksh</span>
+        <br>
+        <a href="#" class="btn" onclick="addToCart('Strawberry', 450)">Add to cart</a>
+
+    </div>
+    <div class="box">
+        <img src="27.png" >
+        <h3>Mango(HOUSE LEMONADE)</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+        <span>450ksh</span>
+        <br>
+        <a href="#" class="btn" onclick="addToCart('Mango(HOUSE LEMONADE)', 450)">Add to cart</a>
+
+    </div>
+    <div class="box">
+        <img src="28.png" >
+        <h3>Watermelon(BLENDED JUICE)</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+        <span>250ksh</span>
+        <br>
+        <a href="#" class="btn" onclick="addToCart('Watermelon(BLENDED JUICE)', 250)">Add to cart</a>
+
+    </div>
+    <div class="box">
+        <img src="29.png" >
+        <h3>Pinneapple Mint(BLENDED JUICE)</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+        <span>250ksh</span>
+        <br>
+        <a href="#" class="btn" onclick="addToCart('Pinneapple Mint(BLENDED JUICE)', 250)">Add to cart</a>
+
+    </div>
+    <div class="box">
+        <img src="30.png" >
+        <h3>Vimto(BLENDED JUICE)</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+        <span>250ksh</span>
+        <br>
+        <a href="#" class="btn" onclick="addToCart('Vimto(BLENDED JUICE)', 250)">Add to cart</a>
+
+    </div>
+    <div class="box">
+        <img src="31.png" >
+        <h3>Avacado Banana(SMOOTHIE)</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+        <span>500ksh</span>
+        <br>
+        <a href="#" class="btn" onclick="addToCart('Avacado Banana(SMOOTHIE)', 500)">Add to cart</a>
+
+    </div>
+    <div class="box">
+        <img src="32.png" >
+        <h3>Mango Lasi(SMOOTHIE)</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+        <span>500ksh</span>
+        <br>
+        <a href="#" class="btn" onclick="addToCart('Mango Lasi(SMOOTHIE)', 500)">Add to cart</a>
+
+    </div>
+    <div class="box">
+        <img src="33.png" >
+        <h3>Lemon Cream(SMOOTHIE)</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+        <span>500ksh</span>
+        <br>
+        <a href="#" class="btn" onclick="addToCart('Lemon Cream(SMOOTHIE)', 500)">Add to cart</a>
+
+    </div>
+    <div class="box">
+        <img src="34.png" >
+        <h3>passion(VIRIN MOJITO)</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+        <span>450ksh</span>
+        <br>
+        <a href="#" class="btn" onclick="addToCart('passion(VIRIN MOJITO)', 450)">Add to cart</a>
+
+    </div>
+    <div class="box">
+        <img src="35.png" >
+        <h3>Strawberry(VIRIN MOJITO)</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+        <span>450KSH</span>
+        <br>
+        <a href="#" class="btn" onclick="addToCart('Strawberry(VIRIN MOJITO)', 450)">Add to cart</a>
+
+    </div>
+    <div class="box">
+        <img src="36.png" >
+        <h3>Classic(VIRIN MOJITO)</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+        <span>450ksh</span>
+        <br>
+        <a href="#" class="btn" onclick="addToCart('Classic(VIRIN MOJITO)', 450)">Add to cart</a>
+
+    </div>
+    <div class="box">
+        <img src="37.png" >
+        <h3>Cookies & Cream(MILKSHAKE)</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+        <span>500KSH</span>
+        <br>
+        <a href="#" class="btn" onclick="addToCart('Cookies & Cream(MILKSHAKE)', 500)">Add to cart</a>
+
+    </div>
+    <div class="box">
+        <img src="38.png" >
+        <h3>Vanilla(MILKSHAKE)</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+        <span>500ksh</span>
+        <br>
+        <a href="#" class="btn" onclick="addToCart('Vanilla(MILKSHAKE)', 500)">Add to cart</a>
+
+    </div>
+    <div class="box">
+        <img src="91.png" >
+        <h3>Strawberry(MILKSHAKE)</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+        <span>500ksh</span>
+        <br>
+        <a href="#" class="btn" onclick="addToCart('Strawberry(MILKSHAKE)', 500)">Add to cart</a>
+
+    </div>
+    <div class="box">
+        <img src="96.png" >
+        <h3>Sunrice(NON ALCOHOLIC)</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+        <span>550ksh</span>
+        <br>
+        <a href="#" class="btn" onclick="addToCart('Sunrice(NON ALCOHOLIC)', 550)">Add to cart</a>
+
+    </div>
+    <div class="box">
+        <img src="95.png" >
+        <h3>Ocean Breeze(NON ALCOHOLIC)</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+        <span>550ksh</span>
+        <br>
+        <a href="#" class="btn" onclick="addToCart('Ocean Breeze(NON ALCOHOLIC)', 550)">Add to cart</a>
+
+    </div>
+    <div class="box">
+        <img src="94.png" >
+        <h3>Liido Beach(NON ALCOHOLIC)</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+        <span>550</span>
+        <br>
+        <a href="#" class="btn" onclick="addToCart('Liido Beach(NON ALCOHOLIC)', 550)">Add to cart</a>
+
+    </div>
+    </div>
+    </div>
+</section>
+<div id="about" class="about">
+    <a href="#" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="about-overlay">
+        <h1>About us</h1>
+        <p>Welcome to Aaran Bistro Cafe! We take pride in serving delicious meals in a warm and inviting atmosphere.</p>
+            <p>a fully fledged restaurant specializing in delivering a relaxed and memorable dining experience. We’re currently located at Shujaa Mall Kilimani.</p>
+            <p>Each location features a unique ambience with tasteful décor, specially designed for your comfort. To make you feel more at home, we’ve carefully selected a unique theme for each location.</p>
+            <p>We have over 300 carefully selected, mouthwatering menu items. Whatever your taste, it's well catered for. We value you. That’s why you’ll always be served with excellence by each member of our highly skilled team.</p>
+            <p>Our experienced wait staff greet you at the door and lead you to the table of your choice in the well-thought-out seating arrangement. The rich aroma of freshly ground coffee is the handy work of our skilled baristas, adept in latte art. This ensures you get a freshly prepared cup of coffee as the beans are roasted on site.</p>
+            <h3>MINIMUM DELIVERY FEE</h3>
+    </div>
+</div>
+<!--Footer Section-->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            
+            <div class="footer-col">
+                <ul>
+                    <i class="fa fa-utensils"></i>
+                    <span>Aaran Bistro & Cafe.</span>
+                </ul>
+           
+                <div class="mail">
+                    <ul>
+                        <i class="fas fa-inbox"></i>
+                        <span>support@aaranbistrocafe@gmail.com</span>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Aaran Bistro & Cafe</h4>
+                <ul>
+                    <li><a href="#">about us</a></li>
+                    <li><a href="#">Our services</a></li>
+                    <li><a href="#">Privacy policy</a></li>
+                    <li><a href="#">Payment policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Location</h4>
+                <ul>
+                    
+                 <li><a href="#">Shujah Mall Ring Rd, Kilimani, Next to Yaya Centre, Opposite Adlife Plaza, Nairobi</a></li>
+                        
+                </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Order Now</h4>
+                    <ul>
+                        <li><a href="#">Drinks</a></li>
+                        <li><a href="#">Breakfast</a></li>
+                        <li><a href="#">Kids' Menu</a></li>
+                        <li><a href="#">Lunch & Dinner</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow us</h4>
+                    <div class="social-links">
+                        <a href="https://tr.ee/YnWrVnrnVC"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/aaranbistro_ke"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/aaranbistro_ke"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@aaranbistro_ke"><i class="fab fa-tiktok"></i></a>
+
+                    </div>
+
+                </div>
+
+            </div>
+            </div>
+            
+
+</footer>
+
+<!--Home  ends-->
+
+
+<!--Java Script-->
+    <script>
+        let menu = document.querySelector('#menu-bars');
+        let navbar = document.querySelector('.navbar');
+        
+        menu.onclick = () => {
+            menu.classList.toggle('fa-times');
+            navbar.classList.toggle('active');
+        }
+        window.onscroll=() => {
+            menu.classList.remove('fa-times');
+            navbar.classList.remove('active');
+        }
+        document.querySelector('#search-icon').onclick=() => {
+            document.querySelector('#search-form').classList.toggle('active');
+        }
+        document.querySelector('#close1').onclick=() => {
+            document.querySelector('#search-form').classList.toggle('active');
+        }
+        document.querySelector("#feedback").onclick=() =>{
+        document.querySelector("#co1").classList.toggle("active");
+    }
+        document.querySelector("#close").onclick=() =>{
+        document.querySelector("#co1").classList.toggle("active");
+
+    }
+    function myfun(){
+        document.getElementById("biryani").style.display="block";
+    }
+    function myfunction(){
+        document.getElementById("start").style.display="block";
+    }
+    function myroti(){
+        document.getElementById("roti").style.display="block";
+    }
+    function mycurry(){
+        document.getElementById("curry").style.display="block";
+    }
+    function myfastfood(){
+        document.getElementById("fast").style.display="block";
+    }
+        const btn = document.querySelector("button");
+        const post = document.querySelector(".post");
+        const widget = document.querySelector(".star-widget");
+        const editBtn = document.querySelector(".edit");
+    
+        btn.onclick = () =>{
+        widget.style.display = "none";
+        post.style.display = "block";
+        editBtn.onclick = () =>{
+            widget.style.display = "block";
+            post.style.display = "none";
+        }
+        return false;
+    }
+        function openAbout(){
+        document.getElementById("about").style.width = "100%";
+
+    }
+    function closeNav(){
+        document.getElementById("about").style.width = "0%";
+    }
+   
+    function addToCart(itemName, itemPrice) {
+        const item = { name: itemName, price: itemPrice, quantity: 1 };
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const existingItem = cart.find(i => i.name === itemName);
+        
+        if (existingItem) {
+            existingItem.quantity++;
+        } else {
+            cart.push(item);
+        }
+        
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCart();
+    }
+    
+    function updateCart() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+        document.getElementById('cartCount').innerText = cartCount;
+    }
+    </script>
+    <!--JavaScript ends -->
+
+</body>
+</html>
