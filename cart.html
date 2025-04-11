@@ -1,3 +1,5 @@
+<!-- Replace your existing HTML with this updated version -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -88,7 +90,7 @@
   <header>
     <a href="#" class="logo"><i class="fa fa-utensils"></i>Aaran Bistro Cafe</a>
     <nav class="navbar">
-      <a href="index.html">Home</a>
+      <a href="main.html">Home</a>
       <a href="dishes.html">Menu</a>
       <a href="cart.html"><span class="fas fa-shopping-cart"></span> (<span id="cartCount">0</span>)</a>
     </nav>
@@ -118,13 +120,9 @@
         <input type="text" id="locationInput" placeholder="e.g., Westlands" required>
         <div id="locationMessage" style="color: red;"></div>
     
-        <button id="payButton" onclick="startCheckout()">Payk</button>
+        <button id="payButton" onclick="startCheckout()">Pay</button>
+
     </div>
-    
-
-
-
-
   </section>
 
   <script>
@@ -183,64 +181,33 @@
           position => {
             const lat = position.coords.latitude;
             const lng = position.coords.longitude;
+    
             if (isLocationInNairobi(lat, lng)) {
               document.getElementById('locationMessage').innerText = "Location accepted!";
+              
+              // Reverse geocode to get address
+              geocoder.geocode({ location: { lat: lat, lng: lng } }, (results, status) => {
+                if (status === 'OK' && results[0]) {
+                  document.getElementById('locationInput').value = results[0].formatted_address;
+                } else {
+                  document.getElementById('locationMessage').innerText = "Could not retrieve address, please enter manually.";
+                }
+              });
+    
             } else {
               document.getElementById('locationMessage').innerText = "Service not available in your area.";
             }
           },
           error => {
             console.log("Geolocation error:", error);
+            document.getElementById('locationMessage').innerText = "Location access denied. Please enter your address manually.";
           }
         );
+      } else {
+        document.getElementById('locationMessage').innerText = "Geolocation is not supported by this browser.";
       }
     }
-
-    function startPayment() {
-      const name = document.getElementById('customerName').value;
-      const email = document.getElementById('customerEmail').value;
-      const phone = document.getElementById('phoneNumber').value;
-      const locationName = document.getElementById('locationInput').value;
-      const cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-      geocoder.geocode({ 'address': locationName }, (results, status) => {
-        if (status === 'OK' && results[0]) {
-          const location = results[0].geometry.location;
-          if (!isLocationInNairobi(location.lat(), location.lng())) {
-            document.getElementById('locationMessage').innerText = "Please enter a location within Nairobi.";
-            return;
-          }
-
-          const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0) * 100;
-
-          const handler = PaystackPop.setup({
-            key: 'pk_test_47ff939949f60169d1da224be4a07ee674677d2b', // Replace with your Paystack public key
-            email: email,
-            amount: total,
-            currency: 'KES',
-            ref: '' + Math.floor(Math.random() * 1000000000 + 1),
-            metadata: {
-              custom_fields: [
-                { display_name: "Phone Number", variable_name: "phone_number", value: phone },
-                { display_name: "Delivery Location", variable_name: "location", value: locationName }
-              ]
-            },
-            callback: function (response) {
-              sendConfirmationEmail(name, email, phone, cart, total / 100, locationName);
-              alert("Payment complete! Thank you.");
-              localStorage.removeItem('cart');
-              window.location.reload();
-            },
-            onClose: function () {
-              alert('Transaction was not completed.');
-            }
-          });
-          handler.openIframe();
-        } else {
-          document.getElementById('locationMessage').innerText = "Invalid location.";
-        }
-      });
-    }
+    
 
     function sendConfirmationEmail(name, email, phone, cart, total, location) {
       emailjs.init("qlcEe7sXgMLARvh_U"); // Replace with your EmailJS user ID
@@ -265,10 +232,6 @@
         });
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
-      loadCart();
-      initMap();
-    });
     function payWithPaystack(name, email, phone, amount, location, cartItems) {
         let handler = PaystackPop.setup({
             key: 'pk_test_47ff939949f60169d1da224be4a07ee674677d2b', // replace with your Paystack public key
@@ -290,12 +253,11 @@
                 // Redirect to cancel page
                 window.location.href = "cancel.html";
             }
-    
-
         });
     
         handler.openIframe();
     }
+
     function startCheckout() {
         const name = document.getElementById('customerName').value.trim();
         const email = document.getElementById('customerEmail').value.trim();
@@ -331,6 +293,12 @@
             }
         });
     }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      loadCart();
+      initMap();
+    });
+  
     
   </script>
 </body>
