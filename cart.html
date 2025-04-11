@@ -11,6 +11,7 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCx1-NrSMmnBzL3Gj8ZE0qjcLPcwRC_Izk&callback=initMap" async defer></script>
 
 
+
   <style>
     #cart {
       margin: 20px;
@@ -127,10 +128,11 @@
   <script>
     let geocoder;
 
-    function initMap() {
-      geocoder = new google.maps.Geocoder();
-      getUserLocation();
-    }
+   function initMap() {
+  geocoder = new google.maps.Geocoder();  // Initialize the geocoder
+  getUserLocation();  // Optional, if you want to auto-fill the location input
+}
+
 
     function loadCart() {
       const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -292,11 +294,6 @@
             }
         });
     }
-    function initMap() {
-  geocoder = new google.maps.Geocoder();
-  getUserLocation(); // Optional if you want to auto-fill
-}
-
 
     document.addEventListener('DOMContentLoaded', () => {
       loadCart();
